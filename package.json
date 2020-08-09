@@ -20,7 +20,7 @@
     "build": "run-p build:**",
     "build:app": "react-scripts build",
     "build:lambda": "netlify-lambda build functions",
-    "test": "react-scripts test",
+    "prod": "npm run build",
     "eject": "react-scripts eject",
     "lambda": "netlify-lambda serve functions"
   },
