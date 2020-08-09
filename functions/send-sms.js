@@ -1,5 +1,5 @@
+require("dotenv").config();
 export function handler(event, context, callback) {
-  require("dotenv").config();
   const { ACCOUNT_SID, AUTH_TOKEN } = process.env;
   const twilio = require("twilio");
   const client = new twilio(ACCOUNT_SID, AUTH_TOKEN);
