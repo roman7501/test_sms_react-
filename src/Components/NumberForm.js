@@ -21,7 +21,6 @@ const NumberForm = ({
         <button type="submit">ok</button>
         {errors.message && <p style={{ color: "red" }}>{errors.message}</p>}
       </form>
-      <button>Sens sms</button>
     </div>
   );
 };
