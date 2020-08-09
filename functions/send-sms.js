@@ -15,11 +15,6 @@ export function handler(event, context, callback) {
       .then(() =>
         callback(null, {
           statusCode: 200,
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers":
-              "Origin, X-Requested-With, Content-Type, Accept",
-          },
           body: "Created",
         })
       )
