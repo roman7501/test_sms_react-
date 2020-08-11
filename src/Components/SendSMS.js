@@ -10,9 +10,15 @@ const SendSMS = () => {
       },
     }).then(console.log("sms sent !"));
   };
+  const handleTest = () => {
+    fetch("/.netlify/functions/test", { method: "GET" }).then(
+      console.log("test ok")
+    );
+  };
   return (
     <div>
       <button onClick={() => handleSend()}>Send SMS!</button>
+      <button onClick={() => handleTest()}>test</button>
     </div>
   );
 };
