@@ -3,7 +3,7 @@ import React from "react";
 const SendSMS = () => {
   const handleSend = () => {
     console.log("submit!");
-    fetch("http://localhost:9000/send-sms", {
+    fetch("/.netlify/functions/send-sms", {
       method: "POST",
       headers: {
         "Content-Type": "text/plain",
