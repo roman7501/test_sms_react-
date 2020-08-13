@@ -5,8 +5,8 @@ const SendSMS = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submitted");
-    fetch("/.netlify/functions/send-sms", {
+    console.log(number);
+    fetch("http://localhost:9000/send-sms", {
       method: "POST",
       headers: {
         "Content-Type": "text/plain",

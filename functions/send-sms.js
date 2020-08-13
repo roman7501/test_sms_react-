@@ -11,7 +11,7 @@ exports.handler = function (event, context, callback) {
 
   client.messages
     .create({
-      body: "Is this working ??",
+      body: "Ceci est un test",
       to: number.to, // Text this number
       from: "+14042366753", // From a valid Twilio number
     })

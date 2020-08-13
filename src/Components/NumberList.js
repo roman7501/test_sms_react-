@@ -12,18 +12,18 @@ const NumberList = () => {
       ...doc.data(),
     }));
     setNumbers(numbers);
-    console.log(numbers);
   };
 
   useEffect(() => {
-    const getMessages = () => {
+    const getNumbers = () => {
       firebase.db
         .collection("numbers")
         .orderBy("createAt", "desc")
         .onSnapshot(handleSnapshot);
     };
-    return getMessages();
+    return getNumbers();
   }, [firebase]);
+
   return (
     <div>
       {numbers.map((number) => (

@@ -5,7 +5,6 @@ import GlobalStyle from "./theme/GlobalStyle";
 import CreateNumber from "./Components/CreateNumber";
 import firebase, { FirebaseContext } from "./firebase";
 import NumberList from "./Components/NumberList";
-import SendSMS from "./Components/SendSMS";
 
 function App({ className }) {
   return (
@@ -14,7 +13,6 @@ function App({ className }) {
         <GlobalStyle />
         <CreateNumber />
         <NumberList />
-        <SendSMS />
       </div>
     </FirebaseContext.Provider>
   );

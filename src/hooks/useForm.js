@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 
-const useForm = (initialState, validate, next) => {
+const useForm = (initialState, validate, formatNumber, next) => {
   const [values, setValues] = useState(initialState);
+  const [formatValues, setFormatValues] = useState("");
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -11,9 +12,7 @@ const useForm = (initialState, validate, next) => {
       if (isErrors) {
         setIsSubmitting(false);
         setValues(initialState);
-        console.log("erreur");
       } else {
-        console.log("pas d'erreur");
         next();
         setIsSubmitting(false);
         setValues(initialState);
@@ -34,9 +33,11 @@ const useForm = (initialState, validate, next) => {
     event.preventDefault();
     const errors = validate(values);
     setErrors(errors);
+    const formattedNumber = formatNumber(values.number);
+    setFormatValues(formattedNumber);
     setIsSubmitting(true);
   };
-  return { handleChange, handleSubmit, values, errors };
+  return { handleChange, handleSubmit, values, formatValues, errors };
 };
 
 export default useForm;
